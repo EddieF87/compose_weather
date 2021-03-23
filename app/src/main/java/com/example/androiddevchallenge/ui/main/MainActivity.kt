@@ -22,7 +22,6 @@ import android.location.Location
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.compose.setContent
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
@@ -110,7 +109,11 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     private fun ForecastHeader(text: String) {
-        Text(text, style = MaterialTheme.typography.h3, modifier = Modifier.padding(start = 16.dp, top = 4.dp))
+        Text(
+            text,
+            style = MaterialTheme.typography.h3,
+            modifier = Modifier.padding(start = 16.dp, top = 4.dp)
+        )
     }
 
     @Composable
@@ -165,10 +168,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToLocationSettings() {
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SETTINGS_REQUEST_CODE) {
             mainViewModel.getUserLocation()
-        }.launch(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+        }
+    }
+
+    private fun goToLocationSettings() {
+        startActivityForResult(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS), SETTINGS_REQUEST_CODE)
     }
 
     @Preview("Light Theme", widthDp = 360, heightDp = 640)
@@ -178,4 +186,8 @@ class MainActivity : AppCompatActivity() {
     @Preview("Dark Theme", widthDp = 360, heightDp = 640)
     @Composable
     fun DarkPreview() = MyTheme(darkTheme = true) { MyApp() }
+
+    companion object {
+        private const val SETTINGS_REQUEST_CODE = 357
+    }
 }
