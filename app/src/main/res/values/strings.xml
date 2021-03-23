@@ -9,5 +9,32 @@
       or implied. See the License for the specific language governing permissions and limitations under
       the License.
       -->
-    <string name="app_name">AndroidDevChallenge</string>
+    <string name="app_name">WeatherCompose</string>
+
+    <string name="rain">Rain</string>
+    <string name="snow">Snow</string>
+    <string name="precipation_chance">Chance: %1$s</string>
+    <string name="precipitation_expected">Expected: %1$smm</string>
+    <string name="unit_kmh">km/h</string>
+    <string name="unit_mph">mph</string>
+    <string name="loading_location">Fetching location</string>
+    <string name="loading_weather_data">Fetching weather data</string>
+    <string name="use_fake_data">Use fake weather data</string>
+    <string name="error_location_permission_denied">Location Permission Denied</string>
+    <string name="error_location_not_turned_on">Location Not Turned On</string>
+    <string name="error_location_not_found">Location Not Found</string>
+    <string name="location_disclaimer">Your location is needed to provide accurate weather data</string>
+    <string name="location_being_requested">Fetching your location. Please wait… or use fake data.</string>
+    <string name="resolve_allow_location">Allow Location</string>
+    <string name="resolve_turn_on_location">Turn on Location in Settings</string>
+    <string name="resolve_try_again">Try again</string>
+    <string name="morn">Morn</string>
+    <string name="day">Day</string>
+    <string name="eve">Eve</string>
+    <string name="night">Night</string>
+    <string name="sunrise">Sunrise: %1$s</string>
+    <string name="sunset">Sunset: %1$s</string>
+    <string name="hourly_forecast">Hourly Forecast</string>
+    <string name="daily_forecast">Daily Forecast</string>
+    <string name="current_weather">Current Weather</string>
 </resources>

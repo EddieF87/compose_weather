@@ -17,27 +17,97 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.R
 
-// Set of Material typography styles to start with
-val typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+private val appFontFamily = FontFamily(
+    fonts = listOf(
+        Font(
+            resId = R.font.firasanscondensed_light,
+            weight = FontWeight.W300,
+            style = FontStyle.Normal
+        ),
+        Font(
+            resId = R.font.firasanscondensed_regular,
+            weight = FontWeight.W400,
+            style = FontStyle.Normal
+        ),
+        Font(
+            resId = R.font.firasanscondensed_semibold,
+            weight = FontWeight.W600,
+            style = FontStyle.Normal
+        ),
+        Font(
+            resId = R.font.firasanscondensed_bold,
+            weight = FontWeight.W700,
+            style = FontStyle.Normal
+        )
     )
-        /* Other default text styles to override
+)
+
+val typography = Typography(
+    h1 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W700,
+        fontSize = 32.sp
+    ),
+    h2 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W700,
+        fontSize = 24.sp,
+        letterSpacing = .15.sp
+    ),
+    h3 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W600,
+        fontSize = 18.sp,
+        letterSpacing = .15.sp
+    ),
+    h4 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W600,
+        fontSize = 16.sp,
+        letterSpacing = .15.sp
+    ),
+    h5 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W600,
+        fontSize = 14.sp,
+        letterSpacing = .15.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W400,
+        fontSize = 16.sp
+    ),
+    subtitle2 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W300,
+        fontSize = 16.sp
+    ),
+    body1 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W400,
+        fontSize = 14.sp
+    ),
+    body2 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.W300,
+        fontSize = 14.sp
+    ),
     button = TextStyle(
         fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+        fontWeight = FontWeight.W600,
+        fontSize = 14.sp,
+        letterSpacing = 1.sp
     ),
     caption = TextStyle(
         fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.W600,
         fontSize = 12.sp
     )
-    */
 )
