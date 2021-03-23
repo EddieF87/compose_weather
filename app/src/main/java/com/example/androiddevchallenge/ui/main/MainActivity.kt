@@ -25,6 +25,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun MyApp() {
-        Surface(color = MaterialTheme.colors.background) {
+        Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
             val locationState: LocationService.LocationState? by mainViewModel.locationState.observeAsState()
             val weatherForecast: WeatherForecast? by mainViewModel.weather.observeAsState()
             weatherForecast?.let { forecast ->

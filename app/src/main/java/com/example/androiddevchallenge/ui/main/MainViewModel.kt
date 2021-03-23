@@ -31,6 +31,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import kotlinx.coroutines.delay
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
@@ -72,7 +73,10 @@ class MainViewModel @Inject constructor(
 
     fun getUserLocation() = locationService.getUserLocation()
 
-    fun useMockData() = fakeWeatherForecast
+    private suspend fun useMockData(): WeatherForecast {
+        delay(2000) // simulate fetching data
+        return fakeWeatherForecast
+    }
 
     private suspend fun useRealData(location: Location) = weatherService.getDailyForecast(
         lat = location.latitude.toString(),
